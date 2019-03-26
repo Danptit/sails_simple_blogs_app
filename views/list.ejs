@@ -1,0 +1,30 @@
+ <h1 class="display-4">Blogs</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#id</th>
+            <th>title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <% blogs.forEach( blog => {  %>
+
+            <tr> 
+                <td><%= blog.id %></td>
+                <td><%= blog.title %></td>
+                <td>
+                    <form class="d-inline" action="/blogs/delete/<%= blog.id %>" method="post">
+                        <input type="submit" value="Delete" class="btn-danger">
+                    </form>
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="/blogs/edit/<%= blog.id %>">Edit</a>
+                    
+                </td>
+            </tr>
+        <% }) %>
+
+    </tbody>
+</table>
